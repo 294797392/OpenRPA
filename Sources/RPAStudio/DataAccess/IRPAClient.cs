@@ -9,6 +9,8 @@ namespace RPAStudio.DataAccess
 {
     public interface IRPAClient
     {
+        #region 项目列表
+
         IEnumerable<Project> QueryAllProjects();
 
         int InsertProject(Project project);
@@ -16,5 +18,18 @@ namespace RPAStudio.DataAccess
         int DeleteProject(string id);
 
         int UpdateProject(Project project);
+
+        #endregion
+
+        #region 分组管理
+
+        /// <summary>
+        /// 根据父节点查询子节点分组列表
+        /// </summary>
+        /// <param name="parentID"></param>
+        /// <returns></returns>
+        IEnumerable<Group> QueryGroups(string parentID);
+
+        #endregion
     }
 }

@@ -67,10 +67,13 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Compile Include="DataAccess\IRPAClient.cs" />
-    <Compile Include="DataAccess\LocalRPAClient.cs" />
+    <Compile Include="DataAccess\JSONRPAClient.cs" />
     <Compile Include="RPAStudioContext.cs" />
     <Compile Include="UserControls\ProjectListUserControl.xaml.cs">
       <DependentUpon>ProjectListUserControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\WorkflowsUserControl.xaml.cs">
+      <DependentUpon>WorkflowsUserControl.xaml</DependentUpon>
     </Compile>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
@@ -85,6 +88,10 @@
       <SubType>Code</SubType>
     </Compile>
     <Page Include="UserControls\ProjectListUserControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UserControls\WorkflowsUserControl.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

@@ -32,8 +32,18 @@
 
         <Grid Grid.Row="1">
 
-            <!--<ContentControl x:Name="ContentContainer"/>-->
-            <uc:ProjectListUserControl />
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="250"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+
+            <GroupBox Grid.Column="0" Header="流程列表">
+                <uc:WorkflowsUserControl/>
+            </GroupBox>
+
+            <GroupBox Grid.Column="1" Header="工作流列表">
+                <uc:ProjectListUserControl Grid.Column="1"/>
+            </GroupBox>
 
         </Grid>
 

@@ -10,7 +10,10 @@ using System.Threading.Tasks;
 
 namespace RPAStudio.DataAccess
 {
-    public class LocalRPAClient : IRPAClient
+    /// <summary>
+    /// 访问JSON文件里的数据
+    /// </summary>
+    public class JSONRPAClient : IRPAClient
     {
         private readonly string ProjectManifestFile = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "ProjectManifest.manifest");
 
@@ -32,6 +35,12 @@ namespace RPAStudio.DataAccess
         public int UpdateProject(Project project)
         {
             return JSONDatabase.Update<Project>(ProjectManifestFile, v => v.ID == project.ID, project);
+        }
+
+
+        public IEnumerable<Group> QueryGroups(string parentID)
+        {
+            throw new NotImplementedException();
         }
     }
 }

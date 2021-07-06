@@ -53,9 +53,13 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AbstractNodeVM.cs" />
+    <Compile Include="WorkflowTreeVM.cs" />
     <Compile Include="ProjectListVM.cs" />
     <Compile Include="ProjectVM.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="GroupVM.cs" />
+    <Compile Include="WorkflowVM.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

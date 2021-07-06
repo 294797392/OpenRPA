@@ -42,5 +42,10 @@ namespace RPAStudio.DataAccess
         {
             throw new NotImplementedException();
         }
+
+        public IEnumerable<Workflow> QueryWorkflows(string groupID)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

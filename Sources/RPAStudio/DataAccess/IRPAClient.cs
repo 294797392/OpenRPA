@@ -35,7 +35,7 @@ namespace RPAStudio.DataAccess
         #region 工作流管理
 
         /// <summary>
-        /// 根据分组ID查询工作流列表
+        /// 根据分组ID查询该分组下的工作流列表
         /// </summary>
         /// <param name="groupID">要查询的分组ID</param>
         /// <returns></returns>

@@ -4,9 +4,38 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:RPAStudio"
+        xmlns:kitbiz="clr-namespace:WPFToolkit.Business.Controls;assembly=WPFToolkit"
+        xmlns:uc="clr-namespace:RPAStudio.UserControls"
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
+
+    <Window.Resources>
+
+        <Style x:Key="StyleMenuItemLocal" TargetType="{x:Type ListBoxItem}" BasedOn="{StaticResource ResourceKey=StyleListBoxItem}">
+            <Setter Property="Cursor" Value="Hand"/>
+        </Style>
+
+    </Window.Resources>
+
     <Grid>
-        
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="0"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <Grid Grid.Row="0">
+            <kitbiz:BusinessMainMenu ConfigFile="menu.json" Orientation="Horizontal" HorizontalAlignment="Center"
+                                     ContentContainer="{Binding ElementName=ContentContainer}"
+                                     ItemContainerStyle="{StaticResource ResourceKey=StyleMenuItemLocal}"/>
+        </Grid>
+
+        <Grid Grid.Row="1">
+
+            <!--<ContentControl x:Name="ContentContainer"/>-->
+            <uc:ProjectListUserControl />
+
+        </Grid>
+
     </Grid>
 </Window>

@@ -40,12 +40,12 @@ namespace RPAStudio.DataAccess
 
         public IEnumerable<Group> QueryGroups(string parentID)
         {
-            throw new NotImplementedException();
+            return JSONDatabase.SelectAll<Group>(v => v.ID == parentID);
         }
 
         public IEnumerable<Workflow> QueryWorkflows(string groupID)
         {
-            throw new NotImplementedException();
+            return JSONDatabase.SelectAll<Workflow>(v => v.GroupID == groupID);
         }
     }
 }

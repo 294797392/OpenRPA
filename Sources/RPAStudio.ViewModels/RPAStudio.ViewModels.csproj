@@ -54,6 +54,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AbstractNodeVM.cs" />
+    <Compile Include="WorkflowListVM.cs" />
     <Compile Include="WorkflowTreeVM.cs" />
     <Compile Include="ProjectListVM.cs" />
     <Compile Include="ProjectVM.cs" />

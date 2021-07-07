@@ -15,32 +15,29 @@ namespace RPAStudio.DataAccess
     /// </summary>
     public class JSONRPAClient : IRPAClient
     {
-        private readonly string ProjectManifestFile = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "ProjectManifest.manifest");
-
         public int DeleteProject(string id)
         {
-            return JSONDatabase.Delete<Project>(ProjectManifestFile, v => v.ID == id);
+            return JSONDatabase.Delete<Project>(v => v.ID == id);
         }
 
         public int InsertProject(Project project)
         {
-            return JSONDatabase.Insert<Project>(ProjectManifestFile, project);
+            return JSONDatabase.Insert<Project>(project);
         }
 
         public IEnumerable<Project> QueryAllProjects()
         {
-            return JSONDatabase.SelectAll<Project>(ProjectManifestFile);
+            return JSONDatabase.SelectAll<Project>();
         }
 
         public int UpdateProject(Project project)
         {
-            return JSONDatabase.Update<Project>(ProjectManifestFile, v => v.ID == project.ID, project);
+            return JSONDatabase.Update<Project>(v => v.ID == project.ID, project);
         }
-
 
         public IEnumerable<Group> QueryGroups(string parentID)
         {
-            return JSONDatabase.SelectAll<Group>(v => v.ID == parentID);
+            return JSONDatabase.SelectAll<Group>(v => v.ParentID == parentID);
         }
 
         public IEnumerable<Workflow> QueryWorkflows(string groupID)

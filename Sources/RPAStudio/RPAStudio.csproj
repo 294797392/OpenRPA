@@ -72,6 +72,9 @@
     <Compile Include="UserControls\ProjectListUserControl.xaml.cs">
       <DependentUpon>ProjectListUserControl.xaml</DependentUpon>
     </Compile>
+    <Compile Include="UserControls\WorkflowListUserControl.xaml.cs">
+      <DependentUpon>WorkflowListUserControl.xaml</DependentUpon>
+    </Compile>
     <Compile Include="UserControls\WorkflowsUserControl.xaml.cs">
       <DependentUpon>WorkflowsUserControl.xaml</DependentUpon>
     </Compile>
@@ -88,6 +91,10 @@
       <SubType>Code</SubType>
     </Compile>
     <Page Include="UserControls\ProjectListUserControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UserControls\WorkflowListUserControl.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

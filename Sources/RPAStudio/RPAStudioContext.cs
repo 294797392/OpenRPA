@@ -1,4 +1,5 @@
 ﻿using DotNEToolkit;
+using RPABase.DataModels;
 using RPAStudio.DataAccess;
 using RPAStudio.ViewModels;
 using System;
@@ -18,7 +19,7 @@ namespace RPAStudio
     {
         public IRPAClient Client { get; private set; }
 
-        public ProjectListVM ProjectList { get; private set; }
+        public BindableCollection<ProjectVM> ProjectList { get; private set; }
 
         /// <summary>
         /// 工作流树形列表ViewModel
@@ -30,15 +31,18 @@ namespace RPAStudio
         /// </summary>
         public TreeViewModelContext WFTreeContext { get; private set; }
 
-        public int Initialize() 
+        public override int Initialize() 
         {
+            base.Initialize();
+
             this.Client = new JSONRPAClient();
 
-            this.ProjectList = new ProjectListVM();
+            this.ProjectList = new BindableCollection<ProjectVM>();
             this.WFTreeVM = new WorkflowTreeVM();
             this.WFTreeContext = new TreeViewModelContext();
 
             this.InitializeGroupListVM();
+            this.InitializeProjectList();
 
             return DotNETCode.SUCCESS;
         }
@@ -50,6 +54,28 @@ namespace RPAStudio
         {
             GroupVM root = new GroupVM(this.WFTreeContext) { Name = Guid.NewGuid().ToString() };
             this.WFTreeVM.Roots.Add(root);
+        }
+
+        private void InitializeProjectList()
+        {
+            this.ProjectList.Clear();
+
+            IEnumerable<Project> projectList = this.Client.QueryAllProjects();
+
+            foreach (Project project in projectList)
+            {
+                ProjectVM pvm = new ProjectVM()
+                {
+                    ID = project.ID,
+                    Name = project.Name,
+                    URI = project.URI,
+                    Description = project.Description,
+                    Creator = project.Creator,
+                    CreationTime = project.CreationTime
+                };
+
+                this.ProjectList.Add(pvm);
+            }
         }
     }
 }

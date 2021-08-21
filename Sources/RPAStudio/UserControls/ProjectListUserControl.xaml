@@ -13,9 +13,19 @@
 
     <UserControl.Resources>
 
+        <Style x:Key="StyleListBoxItemLocal" TargetType="{x:Type ListBoxItem}"></Style>
+
+        <Style x:Key="StyleListBoxLocal" TargetType="{x:Type ListBox}">
+            <Setter Property="ItemContainerStyle" Value="{StaticResource ResourceKey=StyleListBoxItemLocal}"/>
+        </Style>
+
     </UserControl.Resources>
 
     <Grid>
-        <kitbiz:BusinessDataGrid ItemType="{x:Type vm:ProjectVM}" ItemsSource="{Binding Path=ProjectList}"/>
+
+        <ListBox Style="{StaticResource ResourceKey=StyleListBox}">
+            
+        </ListBox>
+
     </Grid>
 </UserControl>

@@ -56,7 +56,6 @@
     <Compile Include="AbstractNodeVM.cs" />
     <Compile Include="WorkflowListVM.cs" />
     <Compile Include="WorkflowTreeVM.cs" />
-    <Compile Include="ProjectListVM.cs" />
     <Compile Include="ProjectVM.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="GroupVM.cs" />

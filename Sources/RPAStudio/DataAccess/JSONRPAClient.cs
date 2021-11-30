@@ -1,5 +1,6 @@
 ﻿using DotNEToolkit;
 using Newtonsoft.Json;
+using RPABase;
 using RPABase.DataModels;
 using System;
 using System.Collections.Generic;
@@ -15,34 +16,60 @@ namespace RPAStudio.DataAccess
     /// </summary>
     public class JSONRPAClient : IRPAClient
     {
+        #region 实例变量
+
+        private JSONDatabaseInstance db;
+
+        #endregion
+
+        #region IRPAClient
+
+        public int Initialize()
+        {
+            string baseDir = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "jsondb");
+            this.db = JSONDatabaseInstance.Create(baseDir);
+            return ResponseCode.SUCCESS;
+        }
+
+        public void Release()
+        { }
+
         public int DeleteProject(string id)
         {
-            return JSONDatabase.Delete<Project>(v => v.ID == id);
+            this.db.Delete<Project>(v => v.ID == id);
+            return ResponseCode.SUCCESS;
         }
 
         public int InsertProject(Project project)
         {
-            return JSONDatabase.Insert<Project>(project);
+            this.db.Insert<Project>(project);
+            return ResponseCode.SUCCESS;
         }
 
         public IEnumerable<Project> QueryAllProjects()
         {
-            return JSONDatabase.SelectAll<Project>();
+            return this.db.SelectAll<Project>();
         }
 
         public int UpdateProject(Project project)
         {
-            return JSONDatabase.Update<Project>(v => v.ID == project.ID, project);
+            return this.db.Update<Project>(v => v.ID == project.ID, project);
         }
 
         public IEnumerable<Group> QueryGroups(string parentID)
         {
-            return JSONDatabase.SelectAll<Group>(v => v.ParentID == parentID);
+            return this.db.SelectAll<Group>(v => v.ParentID == parentID);
         }
 
-        public IEnumerable<Workflow> QueryWorkflows(string groupID)
+        #endregion
+
+        #region 预定义工作流管理
+
+        public IEnumerable<WorkflowMetadata> QueryWorkflowMetadata(string groupID)
         {
-            return JSONDatabase.SelectAll<Workflow>(v => v.GroupID == groupID);
+            return this.db.SelectAll<WorkflowMetadata>(v => v.GroupID == groupID);
         }
+
+        #endregion
     }
 }

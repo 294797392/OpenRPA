@@ -9,6 +9,10 @@ namespace RPAStudio.DataAccess
 {
     public interface IRPAClient
     {
+        int Initialize();
+
+        void Release();
+
         #region 项目列表
 
         IEnumerable<Project> QueryAllProjects();
@@ -39,7 +43,7 @@ namespace RPAStudio.DataAccess
         /// </summary>
         /// <param name="groupID">要查询的分组ID</param>
         /// <returns></returns>
-        IEnumerable<Workflow> QueryWorkflows(string groupID);
+        IEnumerable<WorkflowMetadata> QueryWorkflowMetadata(string groupID);
 
         #endregion
     }

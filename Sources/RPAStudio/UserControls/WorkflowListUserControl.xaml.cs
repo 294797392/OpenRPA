@@ -1,4 +1,6 @@
-﻿using System;
+﻿using RPAStudio.ViewModels;
+using RPAStudio.Windows;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -23,6 +25,24 @@ namespace RPAStudio.UserControls
         public WorkflowListUserControl()
         {
             InitializeComponent();
+        }   
+
+        private void ListBoxWorkflows_MouseDoubleClick(object sender, MouseButtonEventArgs e)
+        {
+            WorkflowVM selectedVM = ListBoxWorkflows.SelectedItem as WorkflowVM;
+            if (selectedVM == null)
+            {
+                return;
+            }
+
+            UpdateWorkflowWindow window = new UpdateWorkflowWindow(selectedVM);
+            window.Owner = Application.Current.MainWindow;
+            if ((bool)window.ShowDialog())
+            {
+            }
         }
     }
 }
+
+
+

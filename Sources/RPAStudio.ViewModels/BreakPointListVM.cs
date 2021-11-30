@@ -8,10 +8,9 @@ using WPFToolkit.MVVM;
 namespace RPAStudio.ViewModels
 {
     /// <summary>
-    /// 工作流树形列表ViewModel
+    /// 断点列表ViewModel
     /// </summary>
-    public class WorkflowTreeVM : TreeViewModel
+    public class BreakPointListVM : BindableCollection<BreakPointVM>
     {
-
     }
 }

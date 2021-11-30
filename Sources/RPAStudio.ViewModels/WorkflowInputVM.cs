@@ -8,9 +8,9 @@ using WPFToolkit.MVVM;
 namespace RPAStudio.ViewModels
 {
     /// <summary>
-    /// 工作流树形列表ViewModel
+    /// 工作流输入参数的ViewModel
     /// </summary>
-    public class WorkflowTreeVM : TreeViewModel
+    public class WorkflowInputVM : ViewModelBase
     {
 
     }

@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using WPFToolkit.Business.Controls;
 using WPFToolkit.MVVM;
 
 namespace RPAStudio.ViewModels
@@ -40,7 +39,7 @@ namespace RPAStudio.ViewModels
         public string URI
         {
             get { return this.uri; }
-            set 
+            set
             {
                 this.uri = value;
                 this.NotifyPropertyChanged("URI");
@@ -68,5 +67,17 @@ namespace RPAStudio.ViewModels
         }
 
         #endregion
+
+        #region 构造方法
+
+        public ProjectVM()
+        {
+        }
+
+        #endregion
     }
 }
+
+
+
+

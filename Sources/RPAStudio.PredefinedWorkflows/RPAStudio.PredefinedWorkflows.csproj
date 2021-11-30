@@ -4,11 +4,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{4816DA5C-05E1-4F15-AFAA-C6E52E2BD5DD}</ProjectGuid>
+    <ProjectGuid>{EFAD59F9-A92B-4D9A-AFDB-186BD6E33F4B}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>RPABase</RootNamespace>
-    <AssemblyName>RPABase</AssemblyName>
+    <RootNamespace>RPAStudio.PredefinedWorkflows</RootNamespace>
+    <AssemblyName>RPAStudio.PredefinedWorkflows</AssemblyName>
     <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <Deterministic>true</Deterministic>
@@ -31,15 +31,6 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="DotNEToolkit">
-      <HintPath>..\..\Dependence\DotNEToolkit.dll</HintPath>
-    </Reference>
-    <Reference Include="log4net">
-      <HintPath>..\..\Dependence\log4net.dll</HintPath>
-    </Reference>
-    <Reference Include="Newtonsoft.Json">
-      <HintPath>..\..\Dependence\Newtonsoft.Json.dll</HintPath>
-    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -47,21 +38,9 @@
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Data" />
     <Reference Include="System.Xml" />
-    <Reference Include="WPFToolkit">
-      <HintPath>..\..\Dependence\WPFToolkit.dll</HintPath>
-    </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="DataModels\Group.cs" />
-    <Compile Include="DataModels\WorkflowMetadata.cs" />
-    <Compile Include="DataModels\Project.cs" />
-    <Compile Include="DataModels\InputOptions.cs" />
-    <Compile Include="DataModels\OptionBase.cs" />
-    <Compile Include="DataModels\OptionTypes.cs" />
-    <Compile Include="DataModels\Workflow.cs" />
-    <Compile Include="MetadataManager.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="ResponseCode.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

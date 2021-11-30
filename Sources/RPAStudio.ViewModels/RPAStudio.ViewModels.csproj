@@ -54,12 +54,27 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AbstractNodeVM.cs" />
+    <Compile Include="BreakPointListVM.cs" />
+    <Compile Include="BreakPointVM.cs" />
+    <Compile Include="OpenedProjectVM.cs" />
+    <Compile Include="OptionVM.cs" />
+    <Compile Include="WorkflowFactory.cs" />
+    <Compile Include="WorkflowInputVM.cs" />
     <Compile Include="WorkflowListVM.cs" />
+    <Compile Include="WorkflowOutputVM.cs" />
+    <Compile Include="Workflows\GenerateRandomVM.cs" />
     <Compile Include="WorkflowTreeVM.cs" />
     <Compile Include="ProjectVM.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="GroupVM.cs" />
+    <Compile Include="WorkflowTreeItemVM.cs" />
     <Compile Include="WorkflowVM.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\RPABase\RPABase.csproj">
+      <Project>{4816DA5C-05E1-4F15-AFAA-C6E52E2BD5DD}</Project>
+      <Name>RPABase</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

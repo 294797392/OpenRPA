@@ -1,0 +1,24 @@
+﻿{
+    "workflows": [
+        {
+            "id": "1",
+            "name": "生成随机数1",
+            "ordinal": 1,
+            "metadataID": "2"
+        },
+
+        {
+            "id": "2",
+            "name": "生成随机数2",
+            "ordinal": 2,
+            "metadataID": "2"
+        },
+
+        {
+            "id": "3",
+            "name": "生成随机数3",
+            "ordinal": 3,
+            "metadataID": "2"
+        }
+    ]
+}

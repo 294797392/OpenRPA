@@ -12,7 +12,14 @@ namespace RPAStudio.ViewModels
     /// </summary>
     public class GroupVM : AbstractNodeVM
     {
-        public GroupVM(TreeViewModelContext context, AbstractNodeVM parent = null) : base(context, parent)
+        public GroupVM(TreeViewModelContext context, object data = null) :
+            base(context, data)
+        {
+
+        }
+
+        public GroupVM(TreeNodeViewModel parent, object data = null) :
+            base(parent, data)
         {
 
         }

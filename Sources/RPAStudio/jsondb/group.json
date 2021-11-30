@@ -1,61 +1,13 @@
 ﻿[
     {
         "id": "58F35890-6430-4CEC-BE1E-3598F27F6FF5",
-        "name": "根节点1"
+        "name": "根节点1",
+        "parentId": ""
     },
-
-    {
-        "id": "F041E372-6CAA-4F4E-BECF-416643CBF731",
-        "name": "根节点2"
-    },
-
-    {
-        "id": "E551DF60-521D-47FA-9DF8-9F924CCA0E19",
-        "name": "根节点3"
-    },
-
-    {
-        "id": "47B8929C-967E-4035-A9C9-F56B021DCDDD",
-        "name": "根节点4"
-    },
-
-    {
-        "id": "D6BC3158-B904-4C5A-A02B-1BC9779C08A3",
-        "name": "根节点5"
-    },
-
-
-
-
 
     {
         "id": "0AA94823-E3C8-4AA2-87D5-1B70F1CC7685",
-        "name": "工作流分组1-1",
+        "name": "变量",
         "parentId": "58F35890-6430-4CEC-BE1E-3598F27F6FF5"
-    },
-
-    {
-        "id": "2ED8E782-C5CA-46E1-ACB7-BFF629E37E8A",
-        "name": "工作流分组2",
-        "parentId": "F041E372-6CAA-4F4E-BECF-416643CBF731"
-    },
-
-    {
-        "id": "A0479232-F0FD-4EAC-9076-697EFAC2D40D",
-        "name": "工作流分组3",
-        "parentId": "E551DF60-521D-47FA-9DF8-9F924CCA0E19"
-    },
-
-    {
-        "id": "C6005C7C-062A-4F6D-BB98-CD26AADEB0F4",
-        "name": "工作流分组4",
-        "parentId": "47B8929C-967E-4035-A9C9-F56B021DCDDD"
-    },
-
-    {
-        "id": "4B298A84-7B29-4B24-B16A-6ED3A0B878CC",
-        "name": "工作流分组5",
-        "parentId": "D6BC3158-B904-4C5A-A02B-1BC9779C08A3"
     }
-
 ]

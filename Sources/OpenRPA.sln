@@ -9,6 +9,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RPAStudio.ViewModels", "RPA
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RPABase", "RPABase\RPABase.csproj", "{4816DA5C-05E1-4F15-AFAA-C6E52E2BD5DD}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RPAStudio.PredefinedWorkflows", "RPAStudio.PredefinedWorkflows\RPAStudio.PredefinedWorkflows.csproj", "{EFAD59F9-A92B-4D9A-AFDB-186BD6E33F4B}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -55,6 +57,18 @@ Global
 		{4816DA5C-05E1-4F15-AFAA-C6E52E2BD5DD}.Release|x64.Build.0 = Release|Any CPU
 		{4816DA5C-05E1-4F15-AFAA-C6E52E2BD5DD}.Release|x86.ActiveCfg = Release|Any CPU
 		{4816DA5C-05E1-4F15-AFAA-C6E52E2BD5DD}.Release|x86.Build.0 = Release|Any CPU
+		{EFAD59F9-A92B-4D9A-AFDB-186BD6E33F4B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EFAD59F9-A92B-4D9A-AFDB-186BD6E33F4B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EFAD59F9-A92B-4D9A-AFDB-186BD6E33F4B}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{EFAD59F9-A92B-4D9A-AFDB-186BD6E33F4B}.Debug|x64.Build.0 = Debug|Any CPU
+		{EFAD59F9-A92B-4D9A-AFDB-186BD6E33F4B}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{EFAD59F9-A92B-4D9A-AFDB-186BD6E33F4B}.Debug|x86.Build.0 = Debug|Any CPU
+		{EFAD59F9-A92B-4D9A-AFDB-186BD6E33F4B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EFAD59F9-A92B-4D9A-AFDB-186BD6E33F4B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EFAD59F9-A92B-4D9A-AFDB-186BD6E33F4B}.Release|x64.ActiveCfg = Release|Any CPU
+		{EFAD59F9-A92B-4D9A-AFDB-186BD6E33F4B}.Release|x64.Build.0 = Release|Any CPU
+		{EFAD59F9-A92B-4D9A-AFDB-186BD6E33F4B}.Release|x86.ActiveCfg = Release|Any CPU
+		{EFAD59F9-A92B-4D9A-AFDB-186BD6E33F4B}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

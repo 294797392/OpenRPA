@@ -1,4 +1,5 @@
-﻿using System;
+﻿using RPAStudio.Windows;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -16,11 +17,11 @@ using System.Windows.Shapes;
 namespace RPAStudio.UserControls
 {
     /// <summary>
-    /// WorkflowsUserControl.xaml 的交互逻辑
+    /// MetadataTreeUserControl.xaml 的交互逻辑
     /// </summary>
-    public partial class WorkflowsUserControl : UserControl
+    public partial class MetadataTreeUserControl : UserControl
     {
-        public WorkflowsUserControl()
+        public MetadataTreeUserControl()
         {
             InitializeComponent();
         }

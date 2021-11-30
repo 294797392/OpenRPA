@@ -5,7 +5,7 @@
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProjectGuid>{C2444DFB-EEED-41A0-894A-9617D425112D}</ProjectGuid>
-    <OutputType>WinExe</OutputType>
+    <OutputType>Exe</OutputType>
     <RootNamespace>RPAStudio</RootNamespace>
     <AssemblyName>RPAStudio</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
@@ -32,6 +32,9 @@
     <DefineConstants>TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject />
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="DotNEToolkit">
@@ -66,17 +69,24 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Converters.cs" />
     <Compile Include="DataAccess\IRPAClient.cs" />
     <Compile Include="DataAccess\JSONRPAClient.cs" />
     <Compile Include="RPAStudioContext.cs" />
     <Compile Include="UserControls\ProjectListUserControl.xaml.cs">
       <DependentUpon>ProjectListUserControl.xaml</DependentUpon>
     </Compile>
+    <Compile Include="UserControls\VariableManagerUserControl.xaml.cs">
+      <DependentUpon>VariableManagerUserControl.xaml</DependentUpon>
+    </Compile>
     <Compile Include="UserControls\WorkflowListUserControl.xaml.cs">
       <DependentUpon>WorkflowListUserControl.xaml</DependentUpon>
     </Compile>
-    <Compile Include="UserControls\WorkflowsUserControl.xaml.cs">
-      <DependentUpon>WorkflowsUserControl.xaml</DependentUpon>
+    <Compile Include="UserControls\MetadataTreeUserControl.xaml.cs">
+      <DependentUpon>MetadataTreeUserControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\UpdateWorkflowWindow.xaml.cs">
+      <DependentUpon>UpdateWorkflowWindow.xaml</DependentUpon>
     </Compile>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
@@ -94,11 +104,19 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="UserControls\VariableManagerUserControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="UserControls\WorkflowListUserControl.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="UserControls\WorkflowsUserControl.xaml">
+    <Page Include="UserControls\MetadataTreeUserControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Windows\UpdateWorkflowWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -121,10 +139,16 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <None Include="jsondb\group.json">
+    <None Include="jsondb\Group.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="jsondb\WorkflowMetadata.json">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
     <None Include="menu.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="project.demo.json">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
     <None Include="Properties\Settings.settings">
@@ -145,8 +169,6 @@
       <Name>RPAStudio.ViewModels</Name>
     </ProjectReference>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Windows\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

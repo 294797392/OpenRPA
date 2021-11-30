@@ -10,7 +10,7 @@ namespace RPAStudio.ViewModels
     /// <summary>
     /// 需要执行的工作流列表
     /// </summary>
-    public class WorkflowListVM : ItemsViewModel<WorkflowVM>
+    public class WorkflowListVM : BindableCollection<WorkflowVM>
     {
 
     }

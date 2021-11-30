@@ -4,17 +4,114 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:RPAStudio.UserControls"
+             xmlns:rpa="clr-namespace:RPAStudio"
              mc:Ignorable="d" 
-             d:DesignHeight="450" d:DesignWidth="800">
+             d:DesignHeight="450" d:DesignWidth="800"
+             DataContext="{Binding Source={x:Static rpa:RPAStudioContext.Context}, Path=OpenedProject}">
 
     <UserControl.Resources>
-        
-        
+
+        <rpa:BreakpointVisibleConverter x:Key="BreakpointVisibleConverter"/>
+
+        <Style x:Key="StyleListBoxItemCommon" TargetType="{x:Type ListBoxItem}" BasedOn="{StaticResource ResourceKey=StyleListBoxItem}">
+            <Setter Property="Height" Value="60"/>
+            <Setter Property="Cursor" Value="Arrow"/>
+            <Setter Property="Margin" Value="0,10,0,0"/>
+            <Setter Property="FocusVisualStyle" Value="{x:Null}"/>
+            <Setter Property="IsSelected" Value="{Binding Path=IsSelected, Mode=TwoWay}"/>
+        </Style>
+
+        <Style x:Key="StyleListBoxItemWorkflow" TargetType="{x:Type ListBoxItem}" BasedOn="{StaticResource ResourceKey=StyleListBoxItemCommon}">
+            <!--<Setter Property="BorderBrush" Value="#d9d8d7"/>-->
+        </Style>
+
+        <Style x:Key="StyleListBoxWorkflows" TargetType="{x:Type ListBox}">
+            <Setter Property="ItemContainerStyle" Value="{StaticResource ResourceKey=StyleListBoxItemWorkflow}"/>
+            <Setter Property="BorderBrush" Value="{x:Null}"/>
+        </Style>
+
+        <Style x:Key="StyleListBoxItemBreakPoint" TargetType="{x:Type ListBoxItem}" BasedOn="{StaticResource ResourceKey=StyleListBoxItemCommon}">
+
+        </Style>
+
+        <Style x:Key="StyleListBoxBreakPoint" TargetType="{x:Type ListBox}">
+            <Setter Property="ItemContainerStyle" Value="{StaticResource ResourceKey=StyleListBoxItemBreakPoint}"/>
+            <Setter Property="BorderBrush" Value="{x:Null}"/>
+        </Style>
+
     </UserControl.Resources>
 
     <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="50"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
 
-        <ListBox></ListBox>
+        <!-- 工具箱 -->
+        <Grid Grid.Row="0">
+            <Border BorderBrush="#d9d8d7" BorderThickness="0,0,0,1" SnapsToDevicePixels="True" RenderOptions.EdgeMode="Aliased"/>
+        </Grid>
+
+        <!-- 工作流列表 -->
+        <Grid Grid.Row="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="80"/>
+                <ColumnDefinition Width="20"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+
+            <ListBox Grid.Column="0" DataContext="{Binding Path=BreakPointList}" ItemsSource="{Binding}"
+                     SelectedItem="{Binding Path=SelectedItem, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                     SelectionMode="Multiple" Style="{StaticResource ResourceKey=StyleListBoxBreakPoint}">
+                <ListBox.ItemTemplate>
+                    <DataTemplate>
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="10"/>
+                                <ColumnDefinition Width="20"/>
+                            </Grid.ColumnDefinitions>
+
+                            <Ellipse Grid.Column="0" Fill="#a4262c" VerticalAlignment="Center" 
+                                     HorizontalAlignment="Right" Width="12" Height="12"
+                                     Visibility="{Binding Path=IsSelected, Converter={StaticResource ResourceKey=BreakpointVisibleConverter}}"/>
+
+                            <TextBlock Grid.Column="2" Text="{Binding Path=Ordinal}"
+                                       HorizontalAlignment="Left" VerticalAlignment="Center"/>
+
+                        </Grid>
+                    </DataTemplate>
+                </ListBox.ItemTemplate>
+            </ListBox>
+
+            <Border Grid.Column="1" BorderBrush="#d9d8d7" BorderThickness="1,0,0,0" Width="5" HorizontalAlignment="Left" SnapsToDevicePixels="True" RenderOptions.EdgeMode="Aliased"/>
+
+            <ListBox Grid.Column="2" x:Name="ListBoxWorkflows" DataContext="{Binding Path=WorkflowList}" ItemsSource="{Binding}"
+                     SelectedItem="{Binding Path=SelectedItem, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                     MouseDoubleClick="ListBoxWorkflows_MouseDoubleClick"
+                     Style="{StaticResource ResourceKey=StyleListBoxWorkflows}">
+                <ListBox.ItemTemplate>
+                    <DataTemplate>
+                        <Grid>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="1*"/>
+                                <RowDefinition Height="1*"/>
+                            </Grid.RowDefinitions>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="50"/>
+                                <ColumnDefinition Width="*"/>
+                            </Grid.ColumnDefinitions>
+
+                            <Image Grid.Row="0" Grid.RowSpan="2" Grid.Column="0"/>
+                            <TextBlock Grid.Row="0" Grid.Column="1" Text="{Binding Path=Name}" VerticalAlignment="Center" FontWeight="Bold"/>
+                            <ContentControl Grid.Row="1" Grid.Column="1" Content="{Binding Path=Summary}"/>
+
+                        </Grid>
+                    </DataTemplate>
+                </ListBox.ItemTemplate>
+            </ListBox>
+
+        </Grid>
 
     </Grid>
 </UserControl>

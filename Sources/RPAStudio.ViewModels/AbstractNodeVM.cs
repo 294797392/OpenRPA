@@ -9,7 +9,14 @@ namespace RPAStudio.ViewModels
 {
     public abstract class AbstractNodeVM : TreeNodeViewModel
     {
-        public AbstractNodeVM(TreeViewModelContext context, TreeNodeViewModel parent = null) : base(context, parent)
+        public AbstractNodeVM(TreeViewModelContext context, object data = null) :
+            base(context, data)
+        {
+
+        }
+
+        public AbstractNodeVM(TreeNodeViewModel parent, object data = null) :
+            base(parent, data)
         {
 
         }

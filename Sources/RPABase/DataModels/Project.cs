@@ -12,10 +12,21 @@ namespace RPABase.DataModels
     /// </summary>
     public class Project : ModelBase
     {
+        ///// <summary>
+        ///// 项目文件的地址
+        ///// </summary>
+        //[JsonProperty("uri")]
+        //public string URI { get; set; }
+
         /// <summary>
-        /// 项目文件的地址
+        /// 该项目下的所有工作流列表
         /// </summary>
-        [JsonProperty("uri")]
-        public string URI { get; set; }
+        [JsonProperty("workflows")]
+        public List<Workflow> Workflows { get; private set; }
+
+        public Project()
+        {
+            this.Workflows = new List<Workflow>();
+        }
     }
 }

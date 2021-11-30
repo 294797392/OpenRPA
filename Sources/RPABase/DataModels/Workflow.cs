@@ -13,9 +13,26 @@ namespace RPABase.DataModels
     public class Workflow : ModelBase
     {
         /// <summary>
-        /// 该工作流所属的分组ID
+        /// 该工作流的编号
         /// </summary>
-        [JsonProperty("groupId")]
-        public string GroupID { get; set; }
+        [JsonProperty("ordinal")]
+        public int Ordinal { get; set; }
+
+        /// <summary>
+        /// 元数据ID
+        /// </summary>
+        [JsonProperty("metadataID")]
+        public string MetadataID { get; set; }
+
+        /// <summary>
+        /// 用户配置好了的输入参数
+        /// </summary>
+        [JsonProperty("input")]
+        public Dictionary<string, object> Input { get; private set; }
+
+        public Workflow()
+        {
+            this.Input = new Dictionary<string, object>();
+        }
     }
 }

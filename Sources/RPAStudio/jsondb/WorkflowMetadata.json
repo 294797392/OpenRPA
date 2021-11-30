@@ -1,0 +1,47 @@
+﻿[
+    {
+        "id": "1",
+        "name": "截断数字",
+        "groupId": "0AA94823-E3C8-4AA2-87D5-1B70F1CC7685",
+        "className": "",
+        "summary": ""
+    },
+
+    {
+        "id": "2",
+        "name": "生成随机数",
+        "groupId": "0AA94823-E3C8-4AA2-87D5-1B70F1CC7685",
+        "className": "RPAStudio.ViewModels.Workflows.GenerateRandomVM, RPAStudio.ViewModels",
+        "summary": "生成一个随机数",
+        "input": [
+            {
+                "name": "最小值",
+                "description": "要生成的随机数的下限",
+                "type": 1
+            },
+            {
+                "name": "最大值",
+                "description": "要生成的随机数的上限",
+                "type": 1
+            },
+            {
+                "name": "生成多个数字",
+                "description": "指定是生成单个随机数还是多个随机数",
+                "type": 3,
+                "child": [
+                    {
+                        "name": "数字个数",
+                        "description": "指定要生成的随机数的个数",
+                        "type": 1
+                    },
+                    {
+                        "name": "允许重复项",
+                        "description": "指定在随机数字列表中是否允许或禁止同一数字多次出现",
+                        "type": 3
+                    }
+                ]
+            }
+        ]
+    }
+]
+
